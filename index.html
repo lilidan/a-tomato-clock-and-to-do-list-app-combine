@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer & Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍅 Pomodoro & Todo</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="timer-section">
+                <div class="timer-display">
+                    <div class="time" id="timeDisplay">25:00</div>
+                    <div class="session-type" id="sessionType">Work Session</div>
+                </div>
+                
+                <div class="timer-controls">
+                    <button id="startBtn" class="btn primary">Start</button>
+                    <button id="pauseBtn" class="btn secondary">Pause</button>
+                    <button id="resetBtn" class="btn secondary">Reset</button>
+                </div>
+                
+                <div class="timer-settings">
+                    <div class="setting">
+                        <label>Work: <span id="workTimeLabel">25</span> min</label>
+                        <input type="range" id="workTime" min="1" max="60" value="25">
+                    </div>
+                    <div class="setting">
+                        <label>Break: <span id="breakTimeLabel">5</span> min</label>
+                        <input type="range" id="breakTime" min="1" max="30" value="5">
+                    </div>
+                </div>
+                
+                <div class="session-counter">
+                    <span>Sessions completed: <strong id="sessionCount">0</strong></span>
+                </div>
+            </div>
+            
+            <div class="todo-section">
+                <h2>📝 Todo List</h2>
+                
+                <div class="todo-input">
+                    <input type="text" id="todoInput" placeholder="Add a new task...">
+                    <button id="addTodoBtn" class="btn primary">Add</button>
+                </div>
+                
+                <div class="todo-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                
+                <ul id="todoList" class="todo-list"></ul>
+                
+                <div class="todo-stats">
+                    <span id="todoStats">0 tasks remaining</span>
+                    <button id="clearCompleted" class="btn secondary small">Clear Completed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
